@@ -7,10 +7,12 @@ const db = new sqlite3.Database(caminhoArq);
 //==== Usuários
 const USERS_SCHEMA = `
 CREATE TABLE IF NOT EXISTS "USERS" (
-    "ID" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "NAME" varchar(80),
-    "EMAIL" varchar(80) UNIQUE,
-    "PASSWORD" varchar(100)
+    "Quantidade de alunos" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "Quantidade de funcionários" varchar(80),
+    "Renda mensal" varchar(80) UNIQUE,
+    "Gastos ao mês(salário e contas)" varchar(100)
+    "Equipamentos" text,
+    "Equipamentos precisando de manutenção" varchar (80)
     );`;
 
 
