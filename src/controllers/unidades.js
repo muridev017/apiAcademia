@@ -37,3 +37,5 @@ app.post('/unidades', async(req, res) => {
 
 }
 module.exports = unidade
+
+//get id, patch, delete. 
