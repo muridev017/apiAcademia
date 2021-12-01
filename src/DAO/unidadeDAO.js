@@ -7,7 +7,7 @@ class unidadeDAO{
 
     pegaTodasUnidades(){
         return new Promise((resolve, reject)=>{
-            this.bd.all('SELECT * FROM UNIDADES', (error, rows)=>{
+            this.bd.all('SELECT * FROM UNIDADE', (error, rows)=>{
                 if(error){
                     reject({
                         "mensagem" : error.message,
@@ -26,7 +26,7 @@ class unidadeDAO{
 
     insereUnidade(novaUnidade){
         return new Promise((resolve, reject)=>{
-            this.bd.run(`INSERT INTO UNIDADES ( qtdAlunos, qtdFuncionarios, unidadeNum, bairro, cidade, uf, cep, telefone,renda, salarios,contas,qtdEquipamentos, equipManutencao) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+            this.bd.run(`INSERT INTO UNIDADE ( qtdAlunos, qtdFuncionarios, unidadeNum, bairro, cidade, uf, cep, telefone,renda, salarios,contas,qtdEquipamentos, equipManutencao) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)`,
             [...Object.values(novaUnidade)], 
             (error)=>{
                 if(error){
@@ -46,7 +46,7 @@ class unidadeDAO{
 
     pegaUsuarioPorEmail(email){
         const SELECT_BY_EMAIL = `
-        SELECT * FROM UNIDADES
+        SELECT * FROM UNIDADE
         WHERE EMAIL = ?`
         return new Promise((resolve, reject)=>{
             this.bd.all(SELECT_BY_EMAIL, email, (error, rows)=>{
@@ -67,7 +67,7 @@ class unidadeDAO{
     
     pegaUsuarioPorId(id){
         const SELECT_BY_ID = `
-        SELECT * FROM UNIDADES
+        SELECT * FROM UNIDADE
         WHERE ID = ?`
         return new Promise((resolve, reject)=>{
             this.bd.all(SELECT_BY_ID, id, (error, rows)=>{

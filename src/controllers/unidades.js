@@ -1,6 +1,7 @@
 const Unidades = require('../models/unidade')
 const UnidadesDAO = require('../DAO/unidadeDAO')
 
+
 const unidade = (app,db) => {
     const filialDAO = new UnidadesDAO(db)
 
@@ -24,6 +25,7 @@ app.post('/unidades', async(req, res) => {
         res.json(insereUni)
 
     } catch (error) {
+        console.log(error)
         res.status(400).json({
             "message": error.message,
             "error": true
@@ -34,14 +36,4 @@ app.post('/unidades', async(req, res) => {
 
 
 }
-
-
-
-// module.exports = app => {
-//     app.get('/unidades', (req, res) => res.send('servidor rodando meesmo'))
-
-//     app.get('/unidades',(req,res) => {Unidades.pegaTodasUnidades(res)})
-
-//     app.post('/unidades', (req,res) => { console.log(req.body) 
-//         res.send('Você está na rota de unidades pelo post agora')})
-// }
+module.exports = unidade
