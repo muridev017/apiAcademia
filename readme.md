@@ -20,26 +20,32 @@ A API foi construídas para fins didáticos, como fechamento do Módulo 4 da Res
 | Método | Rota | Funcionalidade |
 | ------ | ----- | ----------- |
 | **GET** | `/unidades/all` | Gets em todos|
-| **GET** | `/unidades/{id}` | Gets em funcionarios por {id} |
-| **POST** | `/unidades` | Entrada de novo funcionario |
+| **GET** | `/unidades/{id}` | Gets em unidades por {id} |
+| **POST** | `/unidades` | Entrada de nova unidade |
 | **PATCH** | `/unidades/{id}` | Alterações por {id} |
-| **DELETE** | `/unidades/{id}` | Deleção de funcionários {id} |
+| **DELETE** | `/unidades/{id}` | Deleção de unidades {id} |
 
 ## Dependências Gerais:
 ```js
  "dependencies": {
     "body-parser": "^1.19.0",
     "consign": "^0.1.6",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "jest": "^27.4.3",
+    "mysql2": "^2.3.3",
+    "node-fetch": "^2.6.6",
+    "nodemon": "^2.0.15",
+    "save-dev": "^0.0.1-security",
     "sqlite3": "^5.0.2"
-  }
+    }
 ```
 
 ## Dependências Dev:
 
 ```
 "devDependencies": {
-    "nodemon": "^2.0.15"
+    "supertest": "^6.1.6"
   }
   ```
   
