@@ -11,7 +11,7 @@ app.use(cors())
 
 //rotas unidades
 unidades(app, banco)
-app.get('/', (req,res) => {
+app.get('/', (req, res) => {
     res.send('api rodando')
-}) 
+})
 module.exports = app

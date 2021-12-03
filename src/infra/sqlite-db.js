@@ -1,7 +1,7 @@
 // Arquivo responsável por criar e conectar nosso bd
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
-const caminhoArq = path.resolve(__dirname,'database.db')
+const caminhoArq = path.resolve(__dirname, 'database.db')
 // Esse comando verifica se existe um bd no caminha especificado
 // Se nao existir ele cria um com o nome dado
 // Por isso a importancia de ser o mesmo caminho que o indicado no arquivo

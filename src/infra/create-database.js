@@ -1,6 +1,6 @@
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
-const caminhoArq = path.resolve(__dirname,'database.db')
+const caminhoArq = path.resolve(__dirname, 'database.db')
 
 const db = new sqlite3.Database(caminhoArq);
 
@@ -25,18 +25,18 @@ CREATE TABLE IF NOT EXISTS UNIDADE (
 const ADD_UNIDADES = `INSERT INTO UNIDADE (qtdFuncionarios, qtdAlunos, bairro, cidade, uf, cep, telefone, renda, salarios, contas, qtdEquipamentos, equipManutencao) VALUES("100", "300", "rocinha", "caxxxias", "errejota", "21212121", "66666666", "10000", "2", "9998.99", "45", "45")`
 
 function CreateTableUnidade() {
-    db.run(UNIDADE_SCHEMA, (error)=> {
-        if(error) console.log("Error in process of creation table 'UNIDADE'");
+    db.run(UNIDADE_SCHEMA, (error) => {
+        if (error) console.log("Error in process of creation table 'UNIDADE'");
 
     });
 }
-function populaTudo(){
+function populaTudo() {
     db.run(ADD_UNIDADES, (error) => {
-        if(error) console.log(error.message)
+        if (error) console.log(error.message)
     })
 }
 
-db.serialize( ()=> {
+db.serialize(() => {
     CreateTableUnidade();
     populaTudo();
 });
